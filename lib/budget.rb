@@ -15,4 +15,8 @@ class Budget
       department.expenses < 500
     end
   end
+
+  def employee_salaries 
+    
+  end
 end
