@@ -45,6 +45,9 @@ RSpec.describe Budget do
 
   describe "departments_with_low_expenses" do 
     it "has a list of departments with expenses below 500" do 
+      @budget.add_department(@customer_service)
+      @budget.add_department(@bidness)
+
       expect(@budget.departments_with_low_expenses).to eq([@customer_service])
     end
   end
