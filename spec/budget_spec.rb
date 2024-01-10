@@ -73,5 +73,13 @@ RSpec.describe Budget do
       expect(@budget.current_expenses_by_department).to eq(hash)
     end
   end
+
+  describe "all employees" do 
+    it "is a helper method to get all employees" do 
+      @budget.add_department(@customer_service)
+
+      expect(@budget.all_employees).to eq([@bobbi, @aaron])
+    end
+  end
 end
 
