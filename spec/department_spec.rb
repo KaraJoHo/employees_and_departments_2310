@@ -27,4 +27,13 @@ RSpec.describe Department do
       expect(@customer_service.employees).to eq([@bobbi, @aaron])
     end
   end
+
+  describe "expense" do 
+    it "adds expenses to department" do 
+      @customer_service.expense(100)
+      @customer_service.expense(25)
+
+      expect(@customer_service.expenses).to eq(125)
+    end
+  end
 end
