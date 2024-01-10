@@ -19,9 +19,9 @@ RSpec.describe Budget do
     @customer_service.hire(@bobbi)
     @customer_service.hire(@aaron)
 
-    @bidness.hire(corn_puff)
-    @bidness.hire(froot_loop)
-    @bidness.hire(pringle)
+    @bidness.hire(@corn_puff)
+    @bidness.hire(@froot_loop)
+    @bidness.hire(@pringle)
   end
 
   describe "initialize" do 
@@ -29,6 +29,14 @@ RSpec.describe Budget do
       expect(@budget).to be_a(Budget)
       expect(@budget.year).to eq("2023")
       expect(@budget.departments).to eq([])
+    end
+  end
+
+  describe "add_department" do 
+    it "adds a department to the budget" do 
+      @budget.add_department(@customer_service)
+
+      expect(@budget.departments).to eq([@customer_service])
     end
   end
 end
