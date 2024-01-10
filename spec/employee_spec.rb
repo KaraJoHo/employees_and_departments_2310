@@ -7,9 +7,11 @@ RSpec.describe Employee do
   end
 
   describe "initialize" do 
-    expect(@bobbi).to be_a(Employee)
-    expect(@bobbi.name).to eq("Bobbi Jaeger")
-    expect(@bobbi.age).to eq(30)
-    expect(@bobbi.salary).to eq(100000)
+    it "exists with attributes" do 
+      expect(@bobbi).to be_a(Employee)
+      expect(@bobbi.name).to eq("Bobbi Jaeger")
+      expect(@bobbi.age).to eq(30)
+      expect(@bobbi.salary).to eq(100000)
+    end
   end
 end
