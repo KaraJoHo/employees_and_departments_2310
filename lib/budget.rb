@@ -17,7 +17,6 @@ class Budget
   end
 
   def employee_salaries 
-    # require 'pry'; binding.pry
     all_employees.map do |employee| 
       employee.salary
     end
@@ -27,5 +26,15 @@ class Budget
     @departments.map do |department|
       department.employees
     end.flatten
+  end
+
+  def current_expenses_by_department
+    hash = {}
+
+    @departments.each do |department|
+      hash[department] = department.expenses
+    end
+  
+    hash
   end
 end
