@@ -15,6 +15,7 @@ RSpec.describe Department do
       expect(@customer_service).to be_a(Department)
       expect(@customer_service.name).to eq("Customer Service")
       expect(@customer_service.employees).to eq([])
+      expect(@customer_service.expenses).to eq(0)
     end
   end
 
