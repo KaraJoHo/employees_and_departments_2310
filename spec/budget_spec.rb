@@ -11,7 +11,7 @@ RSpec.describe Budget do
     @bidness = Department.new("Bidness")
 
     @bobbi = Employee.new({name: "Bobbi Jaeger", age: "30", salary: "$100000"})
-    @aaron = Employee.new({name: "Aaron Tanaka", age: "25", salary: "90000"})
+    @aaron = Employee.new({name: "Aaron Tanaka", age: "25", salary: "$90000"})
     @corn_puff = Employee.new({name: "Corn Puff", age: "136", salary: "$5"})
     @froot_loop = Employee.new({name: "Froot Loop", age: "444", salary: "$9"})
     @pringle = Employee.new({name: "Pringle Potato Crisp", age: "321", salary: "$13"})
@@ -58,6 +58,19 @@ RSpec.describe Budget do
       @budget.add_department(@bidness)
 
       expect(@budget.employee_salaries).to eq([100000, 90000, 5, 9, 13])
+    end
+  end
+
+  describe "current_expenses_by_department" do 
+    it "is a hash of departments and their expenses" do 
+      @budget.add_department(@customer_service)
+      @budget.add_department(@bidness)
+
+      hash = {@customer_service: 200,
+              @bidness = 60000
+            }
+      
+      expect(budget.current_expenses_by_department).to eq(hash)
     end
   end
 end
