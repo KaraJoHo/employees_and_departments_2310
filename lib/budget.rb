@@ -17,6 +17,15 @@ class Budget
   end
 
   def employee_salaries 
-    
+    # require 'pry'; binding.pry
+    all_employees.map do |employee| 
+      employee.salary
+    end
+  end
+
+  def all_employees 
+    @departments.map do |department|
+      department.employees
+    end.flatten
   end
 end
