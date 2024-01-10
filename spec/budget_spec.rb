@@ -66,11 +66,11 @@ RSpec.describe Budget do
       @budget.add_department(@customer_service)
       @budget.add_department(@bidness)
 
-      hash = {@customer_service: 200,
-              @bidness = 60000
+      hash = {@customer_service => 200,
+              @bidness => 600000
             }
       
-      expect(budget.current_expenses_by_department).to eq(hash)
+      expect(@budget.current_expenses_by_department).to eq(hash)
     end
   end
 end
