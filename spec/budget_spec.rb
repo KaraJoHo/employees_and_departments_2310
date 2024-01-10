@@ -22,6 +22,9 @@ RSpec.describe Budget do
     @bidness.hire(@corn_puff)
     @bidness.hire(@froot_loop)
     @bidness.hire(@pringle)
+
+    @customer_service.expense(200)
+    @bidness.expense(600000)
   end
 
   describe "initialize" do 
@@ -37,6 +40,12 @@ RSpec.describe Budget do
       @budget.add_department(@customer_service)
 
       expect(@budget.departments).to eq([@customer_service])
+    end
+  end
+
+  describe "departments_with_low_expenses" do 
+    it "has a list of departments with expenses below 500" do 
+      expect(@budget.departments_with_low_expenses).to eq([@customer_service])
     end
   end
 end
