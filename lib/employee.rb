@@ -6,4 +6,8 @@ class Employee
     @salary = employee_info[:salary].delete!("$").to_i
   end
 
+  def give_raise(amount)
+    @salary = @salary + amount
+  end
+
 end
