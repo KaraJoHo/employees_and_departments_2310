@@ -51,5 +51,14 @@ RSpec.describe Budget do
       expect(@budget.departments_with_low_expenses).to eq([@customer_service])
     end
   end
+
+  describe "employee_salaries" do 
+    it "is a list of employees salaries" do 
+      @budget.add_department(@customer_service)
+      @budget.add_department(@bidness)
+
+      expect(@budget.employee_salaries).to eq([100000, 90000, 5, 9, 13])
+    end
+  end
 end
 
