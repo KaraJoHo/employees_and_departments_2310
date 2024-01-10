@@ -20,10 +20,10 @@ RSpec.describe Department do
 
   describe "hire" do 
     it "adds employees to the department" do 
-      @customer_service.hire(bobbi)
-      @customer_service.hire(aaron)
+      @customer_service.hire(@bobbi)
+      @customer_service.hire(@aaron)
 
-      expect(@customer_service.employees).to eq([bobbi, aaron])
+      expect(@customer_service.employees).to eq([@bobbi, @aaron])
     end
   end
 end
