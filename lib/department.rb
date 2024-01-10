@@ -7,6 +7,6 @@ class Department
   end
 
   def hire(employee)
-    
+    @employees << employee
   end
 end
